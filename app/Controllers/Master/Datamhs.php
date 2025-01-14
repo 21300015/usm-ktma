@@ -1,0 +1,195 @@
+<?php
+namespace App\Controllers\Master;
+use App\Libraries\Fileutils;
+use App\Libraries\Dateutils;
+use App\Controllers\BaseController;
+
+class Datamhs extends BaseController
+{
+	public $suburl = 'master/datamhs';
+	public $masksalt = '4m31';
+	function __construct() {
+		parent::__construct();
+		
+		$this->modulename = 'Data Mahasiswa';
+		$this->trigger['add'] = $this->innerapp->servervar->encpt('Ra7ePAFnSQ');
+		$this->trigger['edit'] = $this->innerapp->servervar->encpt('Dn8A9m0CR7');
+		$this->trigger['delete'] = $this->innerapp->servervar->encpt('Csixh4E5u8');
+		// $this->trigger['upload'] = $this->innerapp->servervar->encpt('Csdu8sau3bf');
+	}
+	public function index()
+    {
+		$innerapp = $this->innerapp;
+		$this->innerapp->servervar->generateToken();
+		$data = array();
+		$this->addJs('modules/master/datamhs.js');
+        return $this->ViewDefault($this->suburl.'/pagebody', $data);
+    }
+    private function grid() {
+		$innerapp = $this->innerapp; 
+		$filter = "";
+		$searchcolumns = array( 'id' => 'a.id', 'nim' => 'nim', 'namamhs' => 'namamhs');
+		$displaycolumns = array('id','nim','namamhs','gender','alamat','email','nohp','prodi');
+		// $displaycolumns = array('id','nim','namamhs','gender','ttl','alamat','email','nohp','prodi','statusmhs');
+		$sql = "SELECT a.id, a.nim, a.namamhs, a.prodi, c.nm_prodi, a.gender, d.nm_gender, a.tempatlahir, a.tgllahir, CONCAT (a.tempatlahir,', ', a.tgllahir) AS ttl, a.alamat, a.nohp, a.email,
+		date_format(a.tgllahir, '%d-%m-%Y') cd		
+			FROM ##_m_mhs a
+			LEFT JOIN ##_m_prodi c ON a.prodi=c.id
+			LEFT JOIN ##_m_gender d ON a.gender=d.id
+				WHERE a.isactive=1";
+		$q = $innerapp->datatables($sql,$displaycolumns, $searchcolumns, true);	
+		return $q;
+	}
+    public function service($token, $servicename) {
+		$innerapp = $this->innerapp;
+		header('Content-Type: application/json');
+		if(!$innerapp->servervar->trusttoken($token)) {
+			return $innerapp->respMessage('error', 'Kesalahan proses', 'Error 101', true); 
+		}
+		switch($servicename) {
+			case 'grid' : $out = $this->grid(); break;
+			case 'save' : $out = $this->save(); break;
+			case 'listprodi' : $out = $this->listprodi(); break;
+			case 'listgender' : $out = $this->listgender(); break;			
+			default : $out = $innerapp->respMessage('error', 'Kesalahan proses', 'Error 101');
+		}
+		return json_encode($out);
+	}
+
+	private function save() {
+		$innerapp = $this->innerapp; 
+		$mode = $innerapp->cleanpost('savemode');
+		switch($mode) {
+			case $this->trigger['add'] : $out = $this->saveadd() ; break;
+			case $this->trigger['edit'] : $out = $this->saveedit() ; break;
+			case $this->trigger['delete'] : $out = $this->savedelete() ; break;
+			default : 
+				header('HTTP/1.0 404 Not Found');
+				$out = $innerapp->respMessage('error', 'Kesalahan proses', 'Error 103');
+		}
+		return $out;
+	}
+	private function checkvar($d) {
+		$innerapp = $this->innerapp;
+		// var_dump($d);die();
+		$out = array(
+			'nim' => $d['nim'],
+			'namamhs' => $d['namamhs'],
+			'gender' => $d['gender'],
+			'tempatlahir' => $d['tempatlahir'],
+			'alamat' => $d['alamat'],			
+			'nohp' => $d['nohp'],			
+			'email' => $d['email'],			
+			'prodi' => $d['prodi'],
+			'tgllahir' =>  $this->innerapp->tanggal->settgl($d['tgllahir']),			
+		); 
+		return $out;
+	}
+	private function listprodi() {
+		$innerapp= $this->innerapp;
+		$sql = $innerapp->appdb->results("select a.id, a.nm_prodi FROM ##_m_prodi a WHERE a.isactive=1");
+		return $sql;
+	}
+	private function listgender() {
+		$innerapp= $this->innerapp;
+		$sql = $innerapp->appdb->results("select a.id, a.nm_gender FROM ##_m_gender a WHERE a.isactive=1");
+		return $sql;
+	}	
+	private function saveadd() {
+		$innerapp= $this->innerapp;
+		$dt = $innerapp->decpost($innerapp->cleanpost('dt'));
+		//die(var_export($dt));
+		$items = $innerapp->dbstamp($this->checkvar($dt),1);
+		$sv = $innerapp->appdb->insert('##_m_mhs', $items);
+		if (!$sv) {
+			return $innerapp->respMessage('error', 'Kesalahan proses', 'Error 101');
+		}else{
+			return $innerapp->respMessage('info', 'Data berhasil ditambahkan', 'Berhasil');
+		}
+	}
+	private function saveedit() {
+		$innerapp = $this->innerapp;
+		$dt = $innerapp->decpost($innerapp->cleanpost('dt'));
+		// die(var_export($dt));
+		$id = $innerapp->servervar->unmaskref($this->masksalt, $dt['id']);
+		if (!$id) {
+			return $innerapp->respMessage('error', 'Gagal Mengubah Data', 'Error 200');
+		}
+		$items = $innerapp->dbstamp($this->checkvar($dt),2);
+		// die(var_export($items));
+		$q = $innerapp->appdb->update('##_m_mhs', $items, array('id' => $id));
+		if (!$q) {
+			return $innerapp->respMessage('error', 'Gagal Mengubah Data', 'Error 201');
+		}else{
+			return $innerapp->respMessage('info', 'Data berhasil diubah', 'Berhasil');
+		}
+	}
+	private function savedelete() {
+		$innerapp = $this->innerapp; 
+		$id = $innerapp->servervar->unmaskref($this->masksalt, $innerapp->cleanpost('id'));
+		if (!$id) {
+			return $innerapp->respMessage('error', 'Kesalahan proses', 'Error 300');
+		}
+		$q = $innerapp->appdb->update('##_m_mhs', $innerapp->stampdelete(), array('id' => $id));
+		if (!$q) {
+			return $innerapp->respMessage('error', 'Kesalahan proses', 'Error 301');
+		}else{
+			return $innerapp->respMessage('info', 'Data berhasil dihapus', 'Berhasil');
+		}
+	}
+	public function upload($token)
+	{
+		$innerapp = $this->innerapp;
+		//die(var_export($this->appconfig, true));
+		if (!$innerapp->servervar->trusttoken($token)) {
+			return $innerapp->respMessage('error', 'Kesalahan proses', 'Error 101', true);
+		}
+		if (!$_FILES['filenya']) {
+			return $innerapp->respMessage('error', 'Gagal mengupload file', 'Gagal Upload', true);
+		}
+
+		$fileutils = new Fileutils;
+		$fileutils->setFile($_FILES['filenya']);
+		$fileutils->setAllowed(array(
+			'application/pdf' => 'pdf', 'application/vnd.ms-word' => 'doc',
+			'application/msword' => 'doc',
+			'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx',
+			'application/wps-office.docx' => 'docx'
+		));
+
+		$fileutils->setLocation($this->appconfig['filelocation']);
+		if ($fileutils->isallowed() == false) {
+			return $innerapp->respMessage('error', 'Tipe file "' . $fileutils->fileObject['type'] . '" tidak diijinkan', 'Upload ditolak', true);
+		}
+		$exec = $fileutils->doUpload(true);
+
+		if (!$exec) {
+			return $innerapp->respMessage('error', array('msg' => 'Gagal mengupload file'), 'Upload ditolak', true);
+		} else {
+			return $innerapp->respMessage('info', array('msg' => 'File berhasil diupload', 'id_file' => $exec['idfile'], 'name' => $exec['name']), 'Berhasil', true);
+		}
+	}
+	public function download($token, $ref)
+	{
+		$innerapp = $this->innerapp;
+		if (!$innerapp->servervar->trusttoken($token)) {
+			header('HTTP/1.0 404 Not Found');
+			echo 'Kesalahan proses';
+			return;
+		}
+		$id = $innerapp->servervar->unmaskref($this->masksalt, $ref);
+		if (!$id) {
+			header('HTTP/1.0 404 Not Found');
+			echo 'File tidak ditemukan';
+			return;
+		}
+		$fileutils = new Fileutils;
+
+		//header('Content-type:application/pdf');
+		$row = $innerapp->appdb->row("select  a.tahun, a.bulan, a.encptfile, a.realname, a.tipe_file ,a.id from ##_m_files a 
+				where a.id = '" . $id . "'");
+		$path = $this->appconfig['filelocation'] . '/' . $row['tahun'] . '/' . $row['bulan'] . '/';
+		// die($path.'/'.$row['filename']);	
+		$fileutils->renderfile($path, $row['encptfile'], $row['realname'], 'inline', $row['tipe_file']);
+	}		
+}

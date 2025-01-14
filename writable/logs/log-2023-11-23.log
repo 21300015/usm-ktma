@@ -1,0 +1,294 @@
+INFO - 2023-11-23 01:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:14:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:14:40 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 01:14:40 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:14:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:14:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 01:14:46 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:15:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:15:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 01:15:02 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:15:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 01:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 01:15:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 01:15:35 --> Too few arguments to function App\Controllers\Master\Layanan::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Layanan.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Layanan->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Layanan))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:03:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:03:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:04:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:04:00 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:04:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:04:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:04:22 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:06:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:06:37 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:09:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:09:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:09:57 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:12:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Prosedur::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Prosedur.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Prosedur->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:12:33 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Prosedur::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Prosedur.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Prosedur->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:12:33 --> Too few arguments to function App\Controllers\Master\Prosedur::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Prosedur.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Prosedur->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Prosedur))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:17:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:17:01 --> Too few arguments to function App\Controllers\Master\Infoakademik::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Infoakademik.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Infoakademik->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Infoakademik))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:19:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Prosedur::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Prosedur.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Prosedur->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:19:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Infoakademik::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Infoakademik.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Infoakademik->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:20:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:20:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:20:40 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:20:40 --> Too few arguments to function App\Controllers\Master\Layanan::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Layanan.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Layanan->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Layanan))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:23:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:23:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Layanan::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Layanan.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Layanan->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:23:32 --> Too few arguments to function App\Controllers\Master\Layanan::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Layanan.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Layanan->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Layanan))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:23:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Manjsurat::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Manjsurat.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Manjsurat->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:23:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Manjsurat::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Manjsurat.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Manjsurat->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:23:36 --> Too few arguments to function App\Controllers\Master\Manjsurat::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Manjsurat.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Manjsurat->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Manjsurat))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:24:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Manjsurat::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Manjsurat.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Manjsurat->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-23 14:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-11-23 14:24:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Master\Manjsurat::$appconfig is deprecated in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\Master\Manjsurat.php(10): App\Controllers\BaseController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Master\Manjsurat->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-23 14:24:59 --> Too few arguments to function App\Controllers\Master\Manjsurat::service(), 1 passed in C:\xampp\htdocs\infoAkademik\system\CodeIgniter.php on line 942 and exactly 2 expected
+in APPPATH\Controllers\Master\Manjsurat.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Master\Manjsurat->service('grid')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Manjsurat))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
