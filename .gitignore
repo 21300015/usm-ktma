@@ -1,3 +1,5 @@
 writable/*
 /writable
 /writable/*
+/writable/logs
+/writable/debugbar
