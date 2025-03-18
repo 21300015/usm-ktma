@@ -38,7 +38,17 @@
     <!--jquery cdn-->
     <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
-    <div id="appfooterdata" style="display:none !important"><?php echo $encdata?></div>      
+    <!--jquery ui-->
+    <script src="<?= base_url('assets/libs/jqueryui/jquery-ui.min.js'); ?>"></script>
+    <div id="appfooterdata" style="display:none !important">
+        <?php 
+            if(isset($encdata)){
+                echo $encdata;
+            }else{
+
+            }
+        ?>
+    </div>      
 
     <script src="<?php echo base_url() ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
@@ -67,6 +77,9 @@
 
     <!-- Dashboard init -->
     <script src="<?php echo base_url() ?>assets/js/pages/dashboard-ecommerce.init.js"></script>
+    
+    <!-- Wizzard js -->
+    <script src="<?= base_url('assets/libs/jquery-steps/build/jquery.steps.min.js'); ?>"></script>
 
     <!-- Sweet Alerts js -->
     <script src="<?php echo base_url() ?>assets/libs/sweetalert2/sweetalert2.min.js"></script>
@@ -93,7 +106,14 @@
 
     <script src="<?php echo base_url() ?>assets/js/pages/datatables.init.js"></script>
 
-    <?php echo $jsfiles?>
+    <?php 
+        if(isset($jsfiles)){
+            echo $jsfiles;
+        }else{
+
+        }
+        
+    ?>
 
 </body>
 

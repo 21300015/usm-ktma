@@ -48,88 +48,91 @@
 							                </div><!-- end card header -->
 							                <div class="card-body">
 							                    <div class="live-preview">
-							                        <div class="row gy-2">
-							                        	<form method="post" id="fmutama">
-							                        		<input type="hidden" id="ref">
-							                        		<input type="hidden" id="savemode">
+													<form method="post" id="fmutama">
+														<div class="row gy-2">
+															
+															<input type="hidden" id="ref">
+															<input type="hidden" id="savemode">
 
 															<div class="row g-2">
 																<div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="nim" placeholder="" value="">
-									                                  <label for="nim">NIM</label>
-									                                </div>
-															 	</div>
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="nim" placeholder="" value="">
+																		<label for="nim">NIM</label>
+																	</div>
+																</div>
 																<div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="namamhs" placeholder="" value="">
-									                                  <label for="namamhs">Nama Mahasiswa</label>
-									                                </div>
-															 	</div>
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="namamhs" placeholder="" value="">
+																		<label for="namamhs">Nama Mahasiswa</label>
+																	</div>
+																</div>
 																<!--div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="gender" placeholder="" value="">
-									                                  <label for="gender">Gender</label>
-									                                </div>
-															 	</div-->
-				                                                <div class="col-md-6 col-md">
-				                                                    <div class="mb-2">
-				                                                        <label for="idgender" class="form-label">Gender</label>
-				                                                        <select class="form-select" id="idgender" aria-label="Floating">
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="gender" placeholder="" value="">
+																		<label for="gender">Gender</label>
+																	</div>
+																</div-->
+																<div class="col-md-6 col-md">
+																	<div class="mb-2">
+																		<label for="idgender" class="form-label">Gender</label>
+																		<select class="form-select" id="idgender" aria-label="Floating">
 
-				                                                        </select>
-				                                                    </div>
-				                                                </div> 															 	
+																		</select>
+																	</div>
+																</div> 															 	
 																<div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="tempatlahir" placeholder="" value="">
-									                                  <label for="tempatlahir">Tempat Lahir</label>
-									                                </div>
-															 	</div>
-		                                                        <div class="col-xxl-6 col-md-6">
-		                                                            <div>
-		                                                                <label class="form-label mb-0">Tgl. Lahir</label>
-		                                                                <input type="text" class="form-control flatpickr-input" id="tgllahir" data-provider="flatpickr" data-date-format="d-m-Y" readonly="readonly">
-		                                                            </div>
-		                                                        </div>	 			 			 	
-									                            <div class="col-xxl-6 col-md-6">
-									                                <div class="form-floating mb-2">
-									                                    <textarea class="form-control" placeholder="" id="alamat" rows="5"></textarea>
-									                                    <label for="alamat">Alamat</label>
-									                                </div> 
-									                            </div>
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="tempatlahir" placeholder="" value="">
+																		<label for="tempatlahir">Tempat Lahir</label>
+																	</div>
+																</div>
+																<div class="col-xxl-6 col-md-6">
+																	<div>
+																		<label class="form-label mb-0">Tgl. Lahir</label>
+																		<input type="text" class="form-control flatpickr-input" id="tgllahir" data-provider="flatpickr" data-date-format="d-m-Y" readonly="readonly">
+																	</div>
+																</div>	 			 			 	
+																<div class="col-xxl-6 col-md-6">
+																	<div class="form-floating mb-2">
+																		<textarea class="form-control" placeholder="" id="alamat" rows="5"></textarea>
+																		<label for="alamat">Alamat</label>
+																	</div> 
+																</div>
 																<div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="nohp" placeholder="" value="">
-									                                  <label for="nohp">No Hp</label>
-									                                </div>
-															 	</div>
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="nohp" placeholder="" value="">
+																		<label for="nohp">No Hp</label>
+																	</div>
+																</div>
 																<div class="col-xxl-6 col-md">
-									                                <div class="form-floating mb-2">
-									                                  <input type="text" class="form-control" id="email" placeholder="" value="">
-									                                  <label for="email">e-mail</label>
-									                                </div>
-															 	</div>
-				                                                <div class="col-md-6 col-md">
-				                                                    <div class="mb-2">
-				                                                        <label for="idprodi" class="form-label">Program Studi</label>
-				                                                        <select class="form-select" id="idprodi" aria-label="Floating">
+																	<div class="form-floating mb-2">
+																		<input type="text" class="form-control" id="email" placeholder="" value="">
+																		<label for="email">e-mail</label>
+																	</div>
+																</div>
+																<div class="col-md-6 col-md">
+																	<div class="mb-2">
+																		<label for="idprodi" class="form-label">Program Studi</label>
+																		<select class="form-select" id="idprodi" aria-label="Floating">
 
-				                                                        </select>
-				                                                    </div>
-				                                                </div>                 
+																		</select>
+																	</div>
+																</div>                 
 															</div> 
-								                        </div>
+														</div>
 
-								                        <div class="progress mb-2 progress-sm gap-3 mt-3">
-								                            <div class="progress-bar bg-primary" role="progressbar" style="width: 5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-								                        </div>
-								                        <div class="d-flex align-items-start gap-3 mt-3" style="display: block;">
-								                            <div class="hstack gap-2 justify-content-end">
-								                                <button type="button" class="btn btn-light btbatal" data-bs-dismiss="modal">Cancel</button>
-								                                <button type="submit" class="btn btn-success" id="add-btn">Save</button>
-								                            </div>
-								                        </div>
+														<div class="progress mb-2 progress-sm gap-3 mt-3">
+															<div class="progress-bar bg-primary" role="progressbar" style="width: 5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+
+														<div class="d-flex align-items-start gap-3 mt-3" style="display: block;">
+															<div class="hstack gap-2 justify-content-end">
+																<button type="button" class="btn btn-light btbatal" data-bs-dismiss="modal">Cancel</button>
+																<button type="submit" class="btn btn-success" id="add-btn">Save</button>
+															</div>
+														</div>
+
 													</form>
 							                        <!--end row-->
 							                    </div>
@@ -138,7 +141,6 @@
 							        </div>
 							        <!--end col-->
 							    </div>
-						    </div>
 						    <!--end row-->
 						</div>
 					</div>

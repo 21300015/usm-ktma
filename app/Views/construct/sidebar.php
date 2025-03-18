@@ -33,9 +33,21 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu"></span></li>
                         <li class="nav-item">
-                            <a href="!#" class="nav-link menu-link">
+                            <a href="<?php echo site_url('dashboard')?>" class="nav-link menu-link">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboard">Dashboard</span>
                             </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link master" href="#sidebarKtam" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarKtam">
+                                <i class="bx bx-plus-medical"></i> <span data-key="t-master">KTAM</span>
+                            </a>
+                            <div class="collapse menu-dropdown master" id="sidebarKtam">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('ktam_list')?>" class="nav-link dtmhs" data-key=""> Data KTAM </a>
+                                    </li>                                                                        
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link master" href="#sidebarMaster" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaster">

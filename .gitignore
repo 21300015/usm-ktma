@@ -1,7 +1,7 @@
+writable/
 writable/*
+writable/*/*
 /writable
+/writable/
 /writable/*
-/writable/logs
 /writable/debugbar
-*.log
-*.json
