@@ -142,20 +142,25 @@ class FormKtam extends BaseController
     public function cekStatus()
     {
         $nik = $this->request->getPost('nik');
+        $email = $this->request->getPost('email');
         
         // Validasi input NIK
         if (!$nik) {
             return redirect()->to('/')->with('error', 'Harap masukkan NIK.');
         }
 
+        if (!$email) {
+            return redirect()->to('/')->with('error', 'Harap masukkan Email.');
+        }
+
         $model = new AnggotaModel();
-        $anggota = $model->where('nik', $nik)->first();
+        $anggota = $model->where('nik', $nik)->where('email', $email)->first();
 
         if ($anggota) {
             session()->set('anggota_data', $anggota);
             return redirect()->to('/ktam/detail');
         } else {
-            return redirect()->to('/')->with('error', 'NIK tidak ditemukan.');
+            return redirect()->to('/')->with('error', 'NIK atau Email tidak ditemukan.');
         }
     }
 
@@ -187,9 +192,98 @@ class FormKtam extends BaseController
         $organisasiModel = new OrganisasiModel();
         $organisasiList = $organisasiModel->getOrganisasi();
 
-        var_dump($anggota);
-        return view('form_ktam_update', ['daerahList' => $daerahList, 'organisasiList' => $organisasiList, 'anggota' => $anggota]);
+        $organisasiAnggotaModel = new OrganisasiAnggotaModel();
+        $organisasiAnggota = $organisasiAnggotaModel->where('nik', $nik)->findAll();
+
+
+        var_dump($organisasiAnggota);
+        return view('form_ktam_update', ['daerahList' => $daerahList, 'organisasiList' => $organisasiList, 'anggota' => $anggota, 'organisasiAnggota' => $organisasiAnggota]);
         
+    }
+    
+    public function update()
+    {
+        // Ambil data dari session
+        $anggota = session()->get('anggota_data');
+        $nik = $anggota['nik'];
+
+        $ktamModel = new KtamModel();
+
+        $dataFormKtam = [
+            'nama_lengkap' => $this->request->getPost('nama_lengkap'),
+            'gelar_depan' => $this->request->getPost('gelar_depan'),
+            'gelar_belakang' => $this->request->getPost('gelar_belakang'),
+            'tempat_lahir' => $this->request->getPost('tempat_lahir'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'status_perkawinan' => $this->request->getPost('status_perkawinan'),
+            'alamat' => $this->request->getPost('alamat'),
+            'provinsi' => $this->request->getPost('provinsi'),
+            'kota' => $this->request->getPost('kota'),
+            'kecamatan' => $this->request->getPost('kecamatan'),
+            'kelurahan' => $this->request->getPost('kelurahan'),
+            'kode_pos' => $this->request->getPost('kode_pos'),
+            'daerah' => $this->request->getPost('daerah'),
+            'cabang' => $this->request->getPost('cabang'),
+            'email' => $this->request->getPost('email'),
+            'nomor_hp' => $this->request->getPost('nomor_hp'),
+            'profesi' => $this->request->getPost('profesi'),
+            'profesi_lainnya' => $this->request->getPost('profesi_lainnya'),
+            'pekerjaan' => $this->request->getPost('pekerjaan'),
+            'tempat_kerja' => $this->request->getPost('tempat_kerja'),
+            'pendidikan_terakhir' => $this->request->getPost('pendidikan_terakhir'),
+            'riwayat_sd' => $this->request->getPost('riwayat_sd'),
+            'riwayat_smp' => $this->request->getPost('riwayat_smp'),
+            'riwayat_sma' => $this->request->getPost('riwayat_sma'),
+            'riwayat_diploma' => $this->request->getPost('riwayat_diploma'),
+            'riwayat_s1' => $this->request->getPost('riwayat_s1'),
+            'riwayat_s2' => $this->request->getPost('riwayat_s2'),
+            'riwayat_s3' => $this->request->getPost('riwayat_s3'),
+            'pernah_belajar_ponpes' => $this->request->getPost('pernah_belajar_ponpes'),
+            'bahasa_indonesia' => $this->request->getPost('bahasa_indonesia'),
+            'bahasa_arab' => $this->request->getPost('bahasa_arab'),
+            'bahasa_inggris' => $this->request->getPost('bahasa_inggris'),
+            'bahasa_lainnya' => $this->request->getPost('bahasa_lainnya'),
+            'organisasi_lain' => $this->request->getPost('organisasi_lain'),
+        ];
+
+        // Update data utama berdasarkan NIK
+        $ktamModel->update($nik, $dataFormKtam);
+
+        // Update data organisasi
+        $organisasiModel = new OrganisasiModel();
+        $organisasiAnggotaModel = new OrganisasiAnggotaModel();
+        $organisasiList = $organisasiModel->getOrganisasi();
+
+        // Hapus data organisasi lama
+        $organisasiAnggotaModel->where('nik', $nik)->delete();
+
+        $dataOrganisasiAnggota = [];
+        if (!empty($organisasiList)) {
+            foreach ($organisasiList as $organisasi) {
+                $pusat = $this->request->getPost($organisasi['org_id'].'_pusat') ?? 0;
+                $wilayah = $this->request->getPost($organisasi['org_id'].'_wilayah') ?? 0;
+                $daerah = $this->request->getPost($organisasi['org_id'].'_daerah') ?? 0;
+                $cabang = $this->request->getPost($organisasi['org_id'].'_cabang') ?? 0;
+                $ranting = $this->request->getPost($organisasi['org_id'].'_ranting') ?? 0;
+
+                $dataOrganisasiAnggota[] = [
+                    'nik'     => $nik,
+                    'org_id'  => $organisasi['org_id'],
+                    'pusat'   => $pusat,
+                    'wilayah' => $wilayah,
+                    'daerah'  => $daerah,
+                    'cabang'  => $cabang,
+                    'ranting' => $ranting,
+                ];
+            }
+        }
+
+        if (!empty($dataOrganisasiAnggota)) {
+            $organisasiAnggotaModel->insertBatch($dataOrganisasiAnggota);
+        }
+
+        return redirect()->to('ktam/detail')->with('success', 'Data berhasil diperbarui!');
     }
 
     public function uploadDoc()
@@ -199,41 +293,64 @@ class FormKtam extends BaseController
         $nik = $anggota['nik'];
 
         $model = new UploadDocModel();
-        $filePath = 'uploads/';
+        $filePathFoto = 'uploads/foto/';
+        $filePathTrx = 'uploads/trx/';
+        $filePathDoc = 'uploads/document/';
+
+        // Ambil data lama dari database
+        $existingData = $model->where('nik', $nik)->first();
 
         // Simpan file ke folder uploads
         $updateData = [];
 
-        // Validasi dan Simpan File
+        // Validasi dan Simpan File Foto Formal
         if ($this->request->getFile('fotoFormal')->isValid()) {
+            // Hapus file lama jika ada
+            if (!empty($existingData['pas_foto']) && file_exists($existingData['pas_foto'])) {
+                unlink($existingData['pas_foto']);
+            }
+
             $fotoFormal = $this->request->getFile('fotoFormal');
             $fotoName = $fotoFormal->getRandomName();
-            $fotoFormal->move($filePath, $fotoName);
-            $updateData['pas_foto'] = $filePath . $fotoName;
+            $fotoFormal->move($filePathFoto, $fotoName);
+            $updateData['pas_foto'] = $filePathFoto . $fotoName;
         }
 
+        // Validasi dan Simpan File Bukti Bayar
         if ($this->request->getFile('buktiBayar')->isValid()) {
+            if (!empty($existingData['bukti_bayar']) && file_exists($existingData['bukti_bayar'])) {
+                unlink($existingData['bukti_bayar']);
+            }
+
             $buktiBayar = $this->request->getFile('buktiBayar');
             $buktiName = $buktiBayar->getRandomName();
-            $buktiBayar->move($filePath, $buktiName);
-            $updateData['bukti_bayar'] = $filePath . $buktiName;
+            $buktiBayar->move($filePathTrx, $buktiName);
+            $updateData['bukti_bayar'] = $filePathTrx . $buktiName;
         }
 
+        // Validasi dan Simpan File Surat Rekomendasi
         if ($this->request->getFile('suratRekomendasi')->isValid()) {
+            if (!empty($existingData['surat_rekomendasi']) && file_exists($existingData['surat_rekomendasi'])) {
+                unlink($existingData['surat_rekomendasi']);
+            }
+
             $suratRekomendasi = $this->request->getFile('suratRekomendasi');
             $suratName = $suratRekomendasi->getRandomName();
-            $suratRekomendasi->move($filePath, $suratName);
-            $updateData['surat_rekomendasi'] = $filePath . $suratName;
+            $suratRekomendasi->move($filePathDoc, $suratName);
+            $updateData['surat_rekomendasi'] = $filePathDoc . $suratName;
         }
 
+        $updateData['doc_updated_at'] = date('Y-m-d H:i:s');
+
         if (!empty($updateData)) {
-            $model = new AnggotaModel();
             $model->update($nik, $updateData);
 
+            // Perbarui data session
             $anggota = $model->where('nik', $nik)->first();
             session()->set('anggota_data', $anggota);
         }
 
         return redirect()->to('/ktam/detail')->with('success', 'Dokumen berhasil diupload!');
     }
+
 }

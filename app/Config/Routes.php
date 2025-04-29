@@ -14,7 +14,7 @@ $routes->get('ktam/detail', 'FormKtam::detail');
 $routes->get('/formKtam', 'FormKtam::index');
 
 $routes->get('/formKtam/update', 'FormKtam::loadDataUpdate');
-$routes->post('/formKtam/update', 'FormKtam::loadDataUpdate');
+$routes->post('/formKtam/update', 'FormKtam::update');
 
 $routes->get('/formKtam/store', 'FormKtam::store');
 $routes->post('/formKtam/store', 'FormKtam::store');

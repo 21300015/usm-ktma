@@ -85,7 +85,14 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-start">
-                                    <img src="<?= base_url('assets/images/avatar-150.png'); ?>" alt="Profile" class="profile-img me-2">
+                                    <?php if (!empty($anggota['pas_foto'])){ ?>
+                                        
+                                        <img src="<?= base_url($anggota['pas_foto']); ?>" alt="Profile" class="profile-img me-2">
+                                        
+                                    <?php } else { ?>
+                                        <img src="<?= base_url('assets/images/avatar-150.png'); ?>" alt="Profile" class="profile-img me-2">
+                                    <?php } ?>
+                                    
                                     <div>
                                         <h5><?= $anggota['nama_lengkap'] ?></h5>
                                         <p><?= $anggota['kota'] ?> - <?= $anggota['kecamatan'] ?></p>
@@ -110,11 +117,13 @@
                     </tbody>
 
                 </table>
-                <p><strong>NIK:</strong> </p>
-                <p><strong>Nama:</strong> </p>
-                <p><strong>email:</strong> </p>
-                <p><strong>surat_rekomendasi:</strong> <?= $anggota['surat_rekomendasi'] ?></p>
+                <p><strong>NIK:</strong> <span><?= $anggota['nik']; ?></span></p>
+                <p><strong>Nama:</strong> <span><?= $anggota['nama_lengkap']; ?></span></p>
+                <p><strong>email:</strong> <span><?= $anggota['email']; ?></span></p>
+                
                 <p><strong>Tanggal Daftar:</strong> <?= $anggota['created_at'] ?></p>
+                <p><strong>Terakhir Update Data:</strong> <?= $anggota['updated_at'] ?></p>
+                <p><strong>Terakhir Update Document:</strong> <?= $anggota['doc_updated_at'] ?></p>
 
                 <a class="btn btn-secondary btn-sm btn-custom" href="<?= base_url('/') ?>">
                     <i class="bi bi-file-earmark-text"></i> Kembali

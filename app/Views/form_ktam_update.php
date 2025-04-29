@@ -462,10 +462,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php foreach ($organisasiList as $organisasi) : ?>
+                      <?php 
+
+
+                      foreach ($organisasiList as $organisasi) : 
+                      
+                      ?>
                       <tr class="ht-50">
                         <td class="px-3">
                           <span><?= $organisasi['nama'] ?></span>
+                          <span><?= $organisasi['org_id'] ?></span>
                         </td>
                         <td class="px-3">
                           <?php 
@@ -665,11 +671,36 @@
         
         const selectedJk = "<?= $anggota['jenis_kelamin']; ?>";
         const selectedSp = "<?= $anggota['status_perkawinan']; ?>";
+        const selectedPonpes = "<?= $anggota['pernah_belajar_ponpes']; ?>"
         const selectedBahasaIndonesia = "<?= $anggota['bahasa_indonesia']; ?>";
         const selectedBahasaArab = "<?= $anggota['bahasa_arab']; ?>";
         const selectedBahasaInggris = "<?= $anggota['bahasa_inggris']; ?>";
         const selectedBahasaLainnya = "<?= $anggota['bahasa_lainnya']; ?>";
 
+        
+        <?php 
+          foreach ($organisasiAnggota as $o) : 
+        ?>
+
+        if(<?= $o['pusat']; ?> == 1){
+          $('#'+<?= $o['org_id']; ?>+'_pusat').prop( "checked", true );
+        }
+        if(<?= $o['wilayah']; ?> == 1){
+          $('#'+<?= $o['org_id']; ?>+'_wilayah').prop( "checked", true );
+        }
+        if(<?= $o['daerah']; ?> == 1){
+          $('#'+<?= $o['org_id']; ?>+'_daerah').prop( "checked", true );
+        }
+        if(<?= $o['cabang']; ?> == 1){
+          $('#'+<?= $o['org_id']; ?>+'_cabang').prop( "checked", true );
+        }
+        if(<?= $o['ranting']; ?> == 1){
+          $('#'+<?= $o['org_id']; ?>+'_ranting').prop( "checked", true );
+        }
+
+        <?php 
+          endforeach; 
+        ?>
         
         if (selectedDaerah) {
         $('#daerah').val(selectedDaerah).trigger('change');
@@ -702,32 +733,32 @@
         }
 
         if (selectedProfesi) {
-        $('#profesi').val(selectedProfesi).trigger('change');
+          $('#profesi').val(selectedProfesi).trigger('change');
         }
 
         if (selectedPekerjaan) {
-        $('#pekerjaan').val(selectedPekerjaan).trigger('change');
+          $('#pekerjaan').val(selectedPekerjaan).trigger('change');
         }
 
         $('#daerah').change(function() {
-        var daerah = $(this).val();
+          var daerah = $(this).val();
 
-        if (daerah !== '') {
-            $.ajax({
-                url: "<?= site_url('formKtam/get-by-daerah') ?>",
-                type: "GET",
-                data: { daerah: daerah },
-                dataType: "json",
-                success: function(response) {
-                    $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
-                    $.each(response, function(index, item) {
-                        $('#cabang').append('<option value="' + item.nama_cabang + '">' + item.nama_cabang + '</option>');
-                    });
-                }
-            });
-        } else {
-            $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
-        }
+          if (daerah !== '') {
+              $.ajax({
+                  url: "<?= site_url('formKtam/get-by-daerah') ?>",
+                  type: "GET",
+                  data: { daerah: daerah },
+                  dataType: "json",
+                  success: function(response) {
+                      $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
+                      $.each(response, function(index, item) {
+                          $('#cabang').append('<option value="' + item.nama_cabang + '">' + item.nama_cabang + '</option>');
+                      });
+                  }
+              });
+          } else {
+              $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
+          }
         });
 
         $.ajax({
@@ -823,6 +854,12 @@
 
         if(selectedSp){
             $('#'+cleanedString(selectedSp)).prop( "checked", true );
+        }
+
+        if(selectedPonpes == "Pernah"){
+            $('#pesantren_pernah').prop( "checked", true );
+        }else if(selectedPonpes == "Tidak Pernah"){
+            $('#pesantren_tidak_pernah').prop( "checked", true );
         }
 
         if(selectedBahasaIndonesia){

@@ -30,7 +30,7 @@
                             </div><!-- end card header -->
                             <div class="card-body">
                                 <div class="live-preview">
-                                    <form id="ktam-form" action="<?= site_url('formKtam/store') ?>" method="POST">
+                                    <form id="ktam-form" action="<?= site_url('ktam/store') ?>" method="POST">
                                         <div id="wizard2">
                                             <h3>Data Diri</h3>
                                             <section>

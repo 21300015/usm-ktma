@@ -44,6 +44,9 @@ class KtamModel extends Model
         'bahasa_arab',
         'bahasa_inggris',
         'bahasa_lainnya',
-        'organisasi_lain'
+        'organisasi_lain',
+        'created_at',
+        'updated_at',
+        'doc_updated_at'
     ];
 }

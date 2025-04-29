@@ -137,9 +137,14 @@ class Ktam extends BaseController
             
 
             // Simpan data pengalaman organisasi ke tabel `anggota_pengalaman`
-            $organisasiAnggotaModel->insertBatch($dataOrganisasiAnggota);
-            return redirect()->to('ktam_list')->with('success', 'Pendaftaran berhasil!');
             
+            if (!empty($dataOrganisasiAnggota)) {
+                if($organisasiAnggotaModel->insertBatch($dataOrganisasiAnggota)){
+                    return redirect()->to('')->with('success', 'Pendaftaran berhasil!');
+                }
+            }else{
+                return redirect()->to('')->with('success', 'Pendaftaran berhasil!');
+            }
         
     }
 

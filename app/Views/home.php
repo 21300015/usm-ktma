@@ -82,10 +82,21 @@
                   <label>NIK: </label>
                   <input type="text" name="nik" id="nik" class="form-control" placeholder="NIK Terdaftar" required="">
                 </div>
+
+                <div class="form-group mb-3">
+                  <label>Email: </label>
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Email Terdaftar" required="">
+                </div>
+
                 <div class="mg-t-20">
                   <button type="submit" class="btn btn-primary btn-block">Cari</button>
                 </div>
               </form>
+              <?php if (session()->getFlashdata('error')) : ?>
+                <div class="alert alert-danger mt-3">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
