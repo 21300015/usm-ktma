@@ -305,7 +305,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text wd-100">SD</span>
                     </div>
-                    <input type="text" id="	riwayat_sd" name="riwayat_sd" class="form-control" placeholder="SD" value="<?= $anggota['riwayat_sd']; ?>">
+                    <input type="text" id="riwayat_sd" name="riwayat_sd" class="form-control" placeholder="SD" value="<?= $anggota['riwayat_sd']; ?>">
                   </div>
 
                   <div class="input-group">
@@ -703,32 +703,32 @@
         ?>
         
         if (selectedDaerah) {
-        $('#daerah').val(selectedDaerah).trigger('change');
+          $('#daerah').val(selectedDaerah).trigger('change');
 
-        var daerah = $('#daerah').val();
+          var daerah = $('#daerah').val();
 
-        if (daerah !== '') {
-            $.ajax({
-                url: "<?= site_url('formKtam/get-by-daerah') ?>",
-                type: "GET",
-                data: { daerah: daerah },
-                dataType: "json",
-                success: function(response) {
-                    $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
-                    $.each(response, function(index, item) {
-                        if(item.nama_cabang == selectedCabang){
-                            $('#cabang').append('<option value="' + item.nama_cabang + '" selected="selected">' + item.nama_cabang + '</option>');
-                        }else{
-                            $('#cabang').append('<option value="' + item.nama_cabang + '" >' + item.nama_cabang + '</option>');
-                        }
-                        
-                    });
-                }
-            });
-            
-        } else {
-            $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
-        }
+          if (daerah !== '') {
+              $.ajax({
+                  url: "<?= site_url('formKtam/get-by-daerah') ?>",
+                  type: "GET",
+                  data: { daerah: daerah },
+                  dataType: "json",
+                  success: function(response) {
+                      $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
+                      $.each(response, function(index, item) {
+                          if(item.nama_cabang == selectedCabang){
+                              $('#cabang').append('<option value="' + item.nama_cabang + '" selected="selected">' + item.nama_cabang + '</option>');
+                          }else{
+                              $('#cabang').append('<option value="' + item.nama_cabang + '" >' + item.nama_cabang + '</option>');
+                          }
+                          
+                      });
+                  }
+              });
+              
+          } else {
+              $('#cabang').empty().append('<option value="">-- Pilih Cabang --</option>');
+          }
 
         }
 

@@ -195,8 +195,6 @@ class FormKtam extends BaseController
         $organisasiAnggotaModel = new OrganisasiAnggotaModel();
         $organisasiAnggota = $organisasiAnggotaModel->where('nik', $nik)->findAll();
 
-
-        var_dump($organisasiAnggota);
         return view('form_ktam_update', ['daerahList' => $daerahList, 'organisasiList' => $organisasiList, 'anggota' => $anggota, 'organisasiAnggota' => $organisasiAnggota]);
         
     }
