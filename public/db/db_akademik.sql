@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2025 at 04:23 PM
+-- Generation Time: May 02, 2025 at 12:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,14 +47,26 @@ CREATE TABLE `cabang_muhammadiyah` (
 --
 
 INSERT INTO `cabang_muhammadiyah` (`id`, `nama_cabang`, `daerah`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kontak`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Cabang A1', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567890', 'a1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:53:13'),
-(2, 'Cabang A2', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567891', 'a2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:53:15'),
-(3, 'Cabang B1', 'Kota Jakarta Timur', '', '', '', '', '', '081234567892', 'b1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:53:46'),
-(4, 'Cabang B2', 'Kota Jakarta Timur', '', '', '', '', '', '081234567893', 'b2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:53:58'),
-(5, 'Cabang C1', 'Kota Depok', '', '', '', '', '', '081234567894', 'c1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:54:44'),
-(6, 'Cabang C2', 'Kota Depok', '', '', '', '', '', '081234567895', 'c2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:54:45'),
-(7, 'Cabang D1', 'Kota Bogor', '', '', '', '', '', '081234567896', 'd1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:54:53'),
-(8, 'Cabang D2', 'Kota Bogor', '', '', '', '', '', '081234567897', 'd2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-02-28 15:54:54');
+(1, 'Pusat', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567890', 'a1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:12:59'),
+(2, 'Wilayah', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567891', 'a2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:06'),
+(3, 'Pusat', 'Kota Jakarta Timur', '', '', '', '', '', '081234567892', 'b1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:12'),
+(4, 'Wilayah', 'Kota Jakarta Timur', '', '', '', '', '', '081234567893', 'b2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:17'),
+(5, 'Pusat', 'Kota Depok', '', '', '', '', '', '081234567894', 'c1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:20'),
+(6, 'Wilayah', 'Kota Depok', '', '', '', '', '', '081234567895', 'c2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:24'),
+(7, 'Pusat', 'Kota Bogor', '', '', '', '', '', '081234567896', 'd1@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:30'),
+(8, 'Wilayah', 'Kota Bogor', '', '', '', '', '', '081234567897', 'd2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:34'),
+(12, 'Daerah', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567891', 'a2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:06'),
+(13, 'Cabang', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567891', 'a2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:06'),
+(14, 'Rating', 'Kota Jakarta Selatan', '', '', '', '', '', '081234567891', 'a2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:06'),
+(15, 'Daerah', 'Kota Bogor', '', '', '', '', '', '081234567897', 'd2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:34'),
+(16, 'Cabang', 'Kota Bogor', '', '', '', '', '', '081234567897', 'd2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:34'),
+(17, 'Rating', 'Kota Bogor', '', '', '', '', '', '081234567897', 'd2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:34'),
+(18, 'Daerah', 'Kota Depok', '', '', '', '', '', '081234567895', 'c2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:24'),
+(19, 'Cabang', 'Kota Depok', '', '', '', '', '', '081234567895', 'c2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:24'),
+(20, 'Rating', 'Kota Depok', '', '', '', '', '', '081234567895', 'c2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:24'),
+(21, 'Daerah', 'Kota Jakarta Timur', '', '', '', '', '', '081234567893', 'b2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:17'),
+(22, 'Cabang', 'Kota Jakarta Timur', '', '', '', '', '', '081234567893', 'b2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:17'),
+(23, 'Rating', 'Kota Jakarta Timur', '', '', '', '', '', '081234567893', 'b2@muhammadiyah.or.id', '2025-02-09 17:08:42', '2025-05-02 10:13:17');
 
 -- --------------------------------------------------------
 
@@ -602,11 +614,7 @@ CREATE TABLE `ktam` (
 --
 
 INSERT INTO `ktam` (`nik`, `nama_lengkap`, `gelar_depan`, `gelar_belakang`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status_perkawinan`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `kode_pos`, `daerah`, `cabang`, `email`, `nomor_hp`, `profesi`, `profesi_lainnya`, `pekerjaan`, `tempat_kerja`, `pendidikan_terakhir`, `riwayat_sd`, `riwayat_smp`, `riwayat_sma`, `riwayat_diploma`, `riwayat_s1`, `riwayat_s2`, `riwayat_s3`, `pernah_belajar_ponpes`, `bahasa_indonesia`, `bahasa_arab`, `bahasa_inggris`, `bahasa_lainnya`, `organisasi_lain`, `pas_foto`, `bukti_bayar`, `surat_rekomendasi`, `status_bayar`, `status_approve`, `approve_by`, `created_at`, `updated_at`, `doc_updated_at`) VALUES
-('1000123', 'Danu', 'gd', 'gb', 'bogor', '09-04-1998', 'Laki-laki', 'Menikah', 'jl.123 123', 'JAWA BARAT', 'KOTA BOGOR', 'BOGOR BARAT', 'SEMPLAK', '123444', 'Kota Bogor', 'Cabang D2', 'danu@cc.ac', '089911992233', 'Wiraswasta', 'PL', 'Wiraswasta', 'ITK', 'SMA', 'sd1', 'smp1', 'sma1', 'd1', 's1', 's2', 's3', 'Pernah', 'Aktif', 'Aktif', 'Pasif', 'Aktif', 'OLYPSD', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-22 09:59:44', NULL, NULL),
-('1000239', 'Rio Naditra', 'DR', 'M.PD', 'Semarang', '09-02-2012', 'Laki-laki', 'Belum Menikah', 'jl.cijahe rt 02 rw 01 no 01', 'JAWA BARAT', 'KOTA BOGOR', 'BOGOR BARAT', 'CURUGMEKAR', '16113', 'Kota Bogor', 'Cabang D2', 'naditrario@gmail.com', '089513716046', 'Wiraswasta', 'prof lainnya', 'Belum Bekerja', 'PT. DARO DATA', 'SMA', 'SD 2', 'SMP 2', 'SMA 2', 'D2', 'SAINTEK M2', 'S2 2', 'S3 2', 'Pernah', 'Aktif', 'Aktif', 'Aktif', 'Aktif', 'ORG LAIN 22', 'uploads/foto/1745314672_faf24272befb89620915.png', 'uploads/trx/1745314610_c60e184c320982925ac7.jpg', 'uploads/document/1745314610_f2429b26ca814734d07a.pdf', NULL, NULL, NULL, '2025-02-09 21:55:17', '2025-04-22 02:19:09', '2025-04-22 02:38:09'),
-('1003103102913414', 'Rio Naditra', 'GD', 'GB', 'Bogor', '15-10-1999', 'Laki-laki', 'Belum Menikah', 'jl.jalan', 'JAWA BARAT', 'KOTA BOGOR', 'BOGOR BARAT', 'SEMPLAK', '16113', 'Kota Bogor', 'Cabang D2', 'naditrario@gmail.com', '089513716046', 'Pegawai/Karyawan', 'PL', 'Instansi Swasta', 'PT. DARO', 'S1', 'sd 1', 'smp 1', 'sma 1', 'D1', 'USM', '', '', 'Pernah', 'Aktif', 'Pasif', 'Aktif', 'Pasif', 'Org lain', NULL, NULL, NULL, NULL, NULL, NULL, '2025-03-03 03:14:28', NULL, NULL),
-('12312312', 'bagas31', 'aa', 'bb', 'cc', '09-02-2012', 'Laki-laki', 'Menikah', 'hh', 'ACEH', 'KOTA LANGSA', 'LANGSA TIMUR', 'BUKET PULO', '123333', 'Kota Jakarta Timur', 'Cabang B2', 'asd.cc@dd.cc', '123123123', 'Pegawai/Karyawan', 'ee', 'Wiraswasta', 'gg', 'SMA', 'kk', 'll', 'mm', 'nn', 'oo', 'pp', 'qq', 'Pernah', 'Aktif', 'Aktif', 'Aktif', 'Aktif', 'rr', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-27 11:30:31', NULL, NULL),
-('123123123', 'kuyha', 'aa', 'vbb', 'asdasd', '09-02-2012', 'Laki-laki', 'Menikah', 'asdasd', 'DKI JAKARTA', 'KOTA JAKARTA TIMUR', 'CIRACAS', 'SUSUKAN', '13233', 'Kota Depok', 'Cabang C2', 'asdasd@asda.cc', '13123123123', 'Pelajar/Mahasiswa', 'aa', 'Wiraswasta', 'aad', 'SMP', 'sd', 'sss', 'dada', 'adada', 'adad', 'adad', 'adad', 'Pernah', 'Aktif', 'Pasif', 'Aktif', 'Aktif', 'asdasd', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-27 11:25:23', NULL, NULL);
+('100023010', 'Rio Naditra', 'dd', 'ee', 'bogor', '15-04-1999', 'Laki-laki', 'Belum Menikah', 'jl jalan', 'RIAU', 'KABUPATEN INDRAGIRI HULU', 'BATANG PERANAP', 'SELUNAK', '14442', 'Kota Jakarta Selatan', 'Cabang A2', 'naditrario@gmail.com', '089513119929', 'Wiraswasta', 'pl', 'Negeri/TNI/POLRI', 'itk', 'SMA', 'sd', 'smp', 'sma', 'd1', 's1', 's2', 's3', 'Pernah', 'Aktif', 'Pasif', 'Pasif', 'Pasif', 'org lain', 'uploads/foto/1745962819_2b9dc8874cec2aefcf15.png', 'uploads/trx/1745962819_6dd2a3116ae700d70f55.png', 'uploads/document/1745962819_753cd8bc3b1828e6f640.pdf', NULL, NULL, NULL, '2025-04-29 21:38:35', NULL, '2025-04-29 14:40:19');
 
 -- --------------------------------------------------------
 
@@ -683,46 +691,14 @@ CREATE TABLE `organisasi_anggota` (
 --
 
 INSERT INTO `organisasi_anggota` (`id`, `nik`, `org_id`, `pusat`, `wilayah`, `daerah`, `cabang`, `ranting`) VALUES
-(73, '123123123', '1', 1, 0, 1, 0, 1),
-(74, '123123123', '2', 1, 1, 1, 0, 0),
-(75, '123123123', '3', 0, 0, 1, 1, 0),
-(76, '123123123', '4', 0, 0, 1, 0, 1),
-(77, '123123123', '5', 0, 1, 0, 0, 1),
-(78, '123123123', '6', 0, 1, 0, 1, 1),
-(79, '123123123', '7', 0, 1, 0, 1, 1),
-(80, '123123123', '8', 0, 0, 1, 1, 1),
-(81, '12312312', '1', 1, 1, 1, 1, 1),
-(82, '12312312', '2', 1, 1, 1, 1, 1),
-(83, '12312312', '3', 1, 1, 1, 1, 1),
-(84, '12312312', '4', 1, 1, 1, 1, 1),
-(85, '12312312', '5', 1, 1, 1, 1, 1),
-(86, '12312312', '6', 1, 1, 1, 1, 1),
-(87, '12312312', '7', 1, 1, 1, 1, 1),
-(88, '12312312', '8', 1, 1, 1, 1, 1),
-(89, '10003211301', '1', 1, 1, 1, 0, 0),
-(90, '10003211301', '2', 0, 0, 0, 1, 1),
-(91, '10003211301', '3', 1, 1, 1, 0, 0),
-(92, '10003211301', '4', 0, 0, 1, 1, 1),
-(93, '10003211301', '5', 0, 0, 0, 1, 1),
-(94, '10003211301', '6', 0, 1, 0, 1, 0),
-(95, '10003211301', '7', 1, 0, 1, 0, 1),
-(96, '10003211301', '8', 0, 1, 0, 1, 0),
-(113, '1000239', '1', 1, 0, 0, 1, 1),
-(114, '1000239', '2', 0, 1, 1, 1, 0),
-(115, '1000239', '3', 1, 1, 1, 1, 1),
-(116, '1000239', '4', 1, 0, 1, 0, 1),
-(117, '1000239', '5', 1, 0, 0, 0, 0),
-(118, '1000239', '6', 1, 0, 0, 0, 0),
-(119, '1000239', '7', 0, 0, 0, 1, 1),
-(120, '1000239', '8', 1, 0, 0, 0, 1),
-(121, '1000123', '1', 1, 0, 0, 0, 1),
-(122, '1000123', '2', 1, 0, 0, 0, 1),
-(123, '1000123', '3', 1, 0, 0, 0, 1),
-(124, '1000123', '4', 1, 0, 0, 0, 1),
-(125, '1000123', '5', 1, 0, 0, 0, 1),
-(126, '1000123', '6', 1, 0, 0, 0, 1),
-(127, '1000123', '7', 1, 0, 0, 0, 1),
-(128, '1000123', '8', 1, 0, 0, 0, 1);
+(161, '100023010', '1', 1, 1, 1, 1, 1),
+(162, '100023010', '2', 1, 1, 1, 1, 1),
+(163, '100023010', '3', 1, 0, 1, 0, 1),
+(164, '100023010', '4', 1, 0, 1, 0, 1),
+(165, '100023010', '5', 1, 0, 1, 0, 1),
+(166, '100023010', '6', 1, 1, 1, 1, 1),
+(167, '100023010', '7', 1, 1, 1, 1, 1),
+(168, '100023010', '8', 1, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -756,8 +732,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `u
 -- Indexes for table `cabang_muhammadiyah`
 --
 ALTER TABLE `cabang_muhammadiyah`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `dm_mbkm_template`
@@ -894,7 +869,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cabang_muhammadiyah`
 --
 ALTER TABLE `cabang_muhammadiyah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `dm_mbkm_template`
@@ -1008,7 +983,7 @@ ALTER TABLE `organisasi`
 -- AUTO_INCREMENT for table `organisasi_anggota`
 --
 ALTER TABLE `organisasi_anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `users`
