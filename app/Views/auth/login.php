@@ -31,7 +31,7 @@
 
       <div class="signin-sidebar">
         <div class="signin-sidebar-body">
-          <a href="#" class="sidebar-logo mg-b-40"><span>cassie</span></a>
+          <a href="#" class="sidebar-logo mg-b-40"><span>KELOMPOK IV MBKM</span></a>
           <h4 class="signin-title">Welcome back!</h4>
           <h5 class="signin-subtitle">Please signin to continue.</h5>
           <?php if (session()->getFlashdata('error')) : ?>
