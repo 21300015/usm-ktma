@@ -33,9 +33,12 @@ class Ktam extends BaseController
 
     public function loadDataUpdate($nik)
     {
-
+        
         $KtamModel = new KtamModel();
-        $anggota = $KtamModel->where('nik', $nik)->first();
+        $anggota = $KtamModel->select('ktam.*, cabang_muhammadiyah.nama_cabang, cabang_muhammadiyah.daerah')
+                  ->join('cabang_muhammadiyah', 'cabang_muhammadiyah.id = ktam.id_cabang')
+                  ->where('ktam.nik', $nik)
+                  ->first();
 
         $organisasiModel = new OrganisasiModel();
         $organisasiList = $organisasiModel->getOrganisasi(); // Ambil daftar Organisasi
@@ -56,20 +59,32 @@ class Ktam extends BaseController
     public function getData()
     {
         $model = new KtamModel();
-        $data = $model->findAll();
+
+        $data = $model->select('ktam.*, cabang_muhammadiyah.nama_cabang, cabang_muhammadiyah.daerah')
+                  ->join('cabang_muhammadiyah', 'cabang_muhammadiyah.id = ktam.id_cabang')
+                  ->findAll();
+        
         
         return $this->response
                 ->setHeader('Content-Type', 'application/json')
-                ->setJSON(['data' => $data]);
+                ->setJSON([
+                    'data' => $data
+                ]);
     }
 
     public function store()
     {
+        $CabangModel = new CabangModel();
+        $id_cabang = $CabangModel->select('id')
+            ->where('daerah', $daerah)
+            ->where('nama_cabang', $cabang)
+            ->first();
 
         $KtamModel = new KtamModel();
 
         $dataFormKtam = [
             'nik' => $this->request->getPost('nik'), 
+            'id_cabang' => $id_cabang['id'],
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'gelar_depan' => $this->request->getPost('gelar_depan'),
             'gelar_belakang' => $this->request->getPost('gelar_belakang'),
@@ -83,8 +98,6 @@ class Ktam extends BaseController
             'kecamatan' => $this->request->getPost('kecamatan'),
             'kelurahan' => $this->request->getPost('kelurahan'),
             'kode_pos' => $this->request->getPost('kode_pos'),
-            'daerah' => $this->request->getPost('daerah'),
-            'cabang' => $this->request->getPost('cabang'),
             'email' => $this->request->getPost('email'),
             'nomor_hp' => $this->request->getPost('nomor_hp'),
             'profesi' => $this->request->getPost('profesi'),
@@ -173,10 +186,19 @@ class Ktam extends BaseController
 
     public function update($nik)
     {
+        $daerah = $this->request->getPost('daerah');
+        $cabang = $this->request->getPost('cabang');
+
+        $CabangModel = new CabangModel();
+        $id_cabang = $CabangModel->select('id')
+            ->where('daerah', $daerah)
+            ->where('nama_cabang', $cabang)
+            ->first();
 
         $KtamModel = new KtamModel();
 
         $dataFormKtam = [
+            'id_cabang' => $id_cabang['id'],
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'gelar_depan' => $this->request->getPost('gelar_depan'),
             'gelar_belakang' => $this->request->getPost('gelar_belakang'),
@@ -190,8 +212,6 @@ class Ktam extends BaseController
             'kecamatan' => $this->request->getPost('kecamatan'),
             'kelurahan' => $this->request->getPost('kelurahan'),
             'kode_pos' => $this->request->getPost('kode_pos'),
-            'daerah' => $this->request->getPost('daerah'),
-            'cabang' => $this->request->getPost('cabang'),
             'email' => $this->request->getPost('email'),
             'nomor_hp' => $this->request->getPost('nomor_hp'),
             'profesi' => $this->request->getPost('profesi'),
@@ -266,6 +286,38 @@ class Ktam extends BaseController
         }
 
         return $this->response->setJSON(['status' => 'deleted']);
+    }
+
+    public function approve($nik): ResponseInterface
+    {
+        $model = new KtamModel();
+        $data = [
+            'status_approve' => 'approved',
+            'approve_by' => session()->get('email'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+        
+        $model->update($nik, $data);
+
+        return $this->response
+            ->setHeader('Content-Type', 'application/json')
+            ->setJSON(['status' => 'success', 'message' => 'Data berhasil disetujui']);
+    }
+
+    public function reject($nik): ResponseInterface
+    {
+        $model = new KtamModel();
+        $data = [
+            'status_approve' => 'rejected',
+            'approve_by' => session()->get('email'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+        
+        $model->update($nik, $data);
+
+        return $this->response
+            ->setHeader('Content-Type', 'application/json')
+            ->setJSON(['status' => 'success', 'message' => 'Data berhasil ditolak']);
     }
 
     

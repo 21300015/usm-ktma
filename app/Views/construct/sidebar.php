@@ -44,8 +44,11 @@
                             <div class="collapse menu-dropdown master" id="sidebarKtam">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('ktam_list')?>" class="nav-link dtmhs" data-key=""> Data KTAM </a>
-                                    </li>                                                                        
+                                        <a href="<?php echo site_url('ktam_list')?>" class="nav-link" data-key=""> Data KTAM </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('master/datacabang')?>" class="nav-link" data-key=""> Data Cabang </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
