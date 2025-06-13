@@ -8,6 +8,8 @@ use App\Models\OrganisasiModel;
 use App\Models\OrganisasiAnggotaModel;
 use App\Models\UploadDocModel;
 use CodeIgniter\Controller;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class FormKtam extends BaseController
 {
@@ -33,11 +35,17 @@ class FormKtam extends BaseController
 
     public function store()
     {
+        $CabangModel = new CabangModel();
+        $id_cabang = $CabangModel->select('id')
+            ->where('daerah', $daerah)
+            ->where('nama_cabang', $cabang)
+            ->first();
 
         $ktamModel = new KtamModel();
 
         $dataFormKtam = [
-            'nik' => $this->request->getPost('nik'), 
+            'nik' => $this->request->getPost('nik'),
+            'id_cabang' => $id_cabang['id'],
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'gelar_depan' => $this->request->getPost('gelar_depan'),
             'gelar_belakang' => $this->request->getPost('gelar_belakang'),
@@ -51,8 +59,6 @@ class FormKtam extends BaseController
             'kecamatan' => $this->request->getPost('kecamatan'),
             'kelurahan' => $this->request->getPost('kelurahan'),
             'kode_pos' => $this->request->getPost('kode_pos'),
-            'daerah' => $this->request->getPost('daerah'),
-            'cabang' => $this->request->getPost('cabang'),
             'email' => $this->request->getPost('email'),
             'nomor_hp' => $this->request->getPost('nomor_hp'),
             'profesi' => $this->request->getPost('profesi'),
@@ -153,8 +159,12 @@ class FormKtam extends BaseController
             return redirect()->to('/')->with('error', 'Harap masukkan Email.');
         }
 
-        $model = new AnggotaModel();
-        $anggota = $model->where('nik', $nik)->where('email', $email)->first();
+        $KtamModel = new KtamModel();
+        $anggota = $KtamModel->select('ktam.*, cabang_muhammadiyah.nama_cabang, cabang_muhammadiyah.daerah')
+                  ->join('cabang_muhammadiyah', 'cabang_muhammadiyah.id = ktam.id_cabang')
+                  ->where('ktam.nik', $nik)
+                  ->where('ktam.email', $email)
+                  ->first();
 
         if ($anggota) {
             session()->set('anggota_data', $anggota);
@@ -168,12 +178,51 @@ class FormKtam extends BaseController
     {
         // Ambil data dari session
         $anggota = session()->get('anggota_data');
-
         if (!$anggota) {
             return redirect()->to('/')->with('error', 'Data anggota tidak ditemukan.');
         }
 
         return view('detail_status', ['anggota' => $anggota]);
+    }
+
+    public function cetakBerkas()
+    {
+        
+        $anggota = session()->get('anggota_data');
+        if (!$anggota) {
+            return redirect()->to('/')->with('error', 'Data anggota tidak ditemukan.');
+        }
+
+        $nik = $anggota['nik'];
+
+        $organisasiModel = new OrganisasiModel();
+        $organisasiList = $organisasiModel->getOrganisasi();
+
+        $organisasiAnggotaModel = new OrganisasiAnggotaModel();
+        $organisasiAnggota = $organisasiAnggotaModel->where('nik', $nik)->findAll();
+        
+        $imagePath = FCPATH . 'assets/images/logo-muhammadiyah.png';
+        $base64 = '';
+        if (file_exists($imagePath)) {
+            $type = pathinfo($imagePath, PATHINFO_EXTENSION);
+            $data = file_get_contents($imagePath);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        }
+
+        // return view ('ktam/formulir_muhammadiyah', ['logo' => $base64, 'anggota' => $anggota, 'organisasiList' => $organisasiList, 'organisasiAnggota' => $organisasiAnggota]);
+        $html = view('ktam/formulir_muhammadiyah', ['logo' => $base64, 'anggota' => $anggota, 'organisasiList' => $organisasiList, 'organisasiAnggota' => $organisasiAnggota]); // load view
+
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        $dompdf->stream('formulir_muhammadiyah.pdf', ['Attachment' => false]); // tampilkan langsung di browser
     }
 
     public function loadDataUpdate()
@@ -182,8 +231,11 @@ class FormKtam extends BaseController
         $anggota = session()->get('anggota_data');
         $nik = $anggota['nik'];
 
-        $anggotaModel = new AnggotaModel();
-        $anggota = $anggotaModel->where('nik', $nik)->first();
+        $KtamModel = new KtamModel();
+        $anggota = $KtamModel->select('ktam.*, cabang_muhammadiyah.nama_cabang, cabang_muhammadiyah.daerah')
+                  ->join('cabang_muhammadiyah', 'cabang_muhammadiyah.id = ktam.id_cabang')
+                  ->where('ktam.nik', $nik)
+                  ->first();
         session()->set('anggota_data', $anggota);
 
         $daerahModel = new CabangModel();
@@ -205,9 +257,19 @@ class FormKtam extends BaseController
         $anggota = session()->get('anggota_data');
         $nik = $anggota['nik'];
 
+        $daerah = $this->request->getPost('daerah');
+        $cabang = $this->request->getPost('cabang');
+
+        $CabangModel = new CabangModel();
+        $id_cabang = $CabangModel->select('id')
+            ->where('daerah', $daerah)
+            ->where('nama_cabang', $cabang)
+            ->first();
+
         $ktamModel = new KtamModel();
 
         $dataFormKtam = [
+            'id_cabang' => $id_cabang['id'],
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'gelar_depan' => $this->request->getPost('gelar_depan'),
             'gelar_belakang' => $this->request->getPost('gelar_belakang'),
@@ -221,8 +283,6 @@ class FormKtam extends BaseController
             'kecamatan' => $this->request->getPost('kecamatan'),
             'kelurahan' => $this->request->getPost('kelurahan'),
             'kode_pos' => $this->request->getPost('kode_pos'),
-            'daerah' => $this->request->getPost('daerah'),
-            'cabang' => $this->request->getPost('cabang'),
             'email' => $this->request->getPost('email'),
             'nomor_hp' => $this->request->getPost('nomor_hp'),
             'profesi' => $this->request->getPost('profesi'),

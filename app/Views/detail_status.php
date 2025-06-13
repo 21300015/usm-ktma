@@ -41,25 +41,10 @@
     <!-- template css -->
     <link rel="stylesheet" href="<?= base_url('assets/css/cassie.css'); ?>">
     <style type="text/css">
-
-        .select2-container{
-            display: block;
-        }
-
         .status-badge {
-            background-color: #f5a623;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
+            text-transform: capitalize;
         }
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 15px;
-        }
+        
     </style>
   </head>
   <body class="bg-gray-100">
@@ -103,12 +88,24 @@
                                 </div>
                             </td>
                             <td>
-                                <span class="status-badge">BELUM DIPROSES</span>
+                                <?php if ($anggota['status_approve'] == 'pending') { ?>
+                                    <span class="status-badge bg-warning"><?= $anggota['status_approve']; ?></span>
+
+                                <?php } elseif ($anggota['status_approve'] == 'approved') { ?>
+                                    <span class="status-badge bg-success"><?= $anggota['status_approve']; ?></span>
+
+                                <?php } elseif ($anggota['status_approve'] == 'rejected') { ?>
+                                    <span class="status-badge bg-danger"><?= $anggota['status_approve']; ?></span>
+
+                                <?php } else { ?>
+                                    <span class="status-badge bg-secondary">-</span>
+                                <?php } ?>
+                                
                             </td>
                             <td>
-                                <button class="btn btn-secondary btn-sm btn-custom">
+                                <a class="btn btn-secondary btn-sm btn-custom" href="<?= base_url('/ktam/cetak-berkas') ?>" target="_blank">
                                     <i class="bi bi-file-earmark-text"></i> CETAK BERKAS
-                                </button>
+                                </a>
                                 <button class="btn btn-primary btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#modal_document">
                                     <i class="bi bi-cloud-upload"></i> UPLOAD DOKUMEN
                                 </button>

@@ -1074,3 +1074,34 @@ File: Custom Css File
 .error-panel .svg-wrapper-503 {
   width: 200px;
 }
+
+.checked {
+  color: #4CAF50;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.not-checked {
+  color: #F44336;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.select2-container{
+  display: block;
+}
+
+.status-badge {
+  background-color: #f5a623;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+}

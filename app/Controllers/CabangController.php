@@ -22,4 +22,5 @@ class CabangController extends Controller
 
         return $this->response->setJSON($cabang);
     }
+    
 }

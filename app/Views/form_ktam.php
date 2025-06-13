@@ -158,12 +158,8 @@
                       <label class="custom-control-label" for="belum_menikah">Belum Menikah</label>
                     </div>
                     <div class="custom-control custom-radio">
-                      <input type="radio" id="janda" name="status_perkawinan" value="Janda" class="custom-control-input">
-                      <label class="custom-control-label" for="janda">Janda</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                      <input type="radio" id="duda" name="status_perkawinan" value="Duda" class="custom-control-input">
-                      <label class="custom-control-label" for="duda">Duda</label>
+                      <input type="radio" id="janda" name="status_perkawinan" value="Janda/Duda" class="custom-control-input">
+                      <label class="custom-control-label" for="janda">Janda/Duda</label>
                     </div>
                   </div>
                 </div><!-- col -->
@@ -185,26 +181,23 @@
                   <label class="form-control-label">Profesi: <span class="tx-danger">*</span></label>
                   <select class="form-control select2-no-search" name="profesi" id="profesi" required="">
                     <option value="" selected="selected">Pilih..</option>
-                    <option value="Pensiunan">Pensiunan</option>
-                    <option value="Mengurus Rumah Tangga">Mengurus Rumah Tangga</option>
-                    <option value="Wiraswasta">Wiraswasta</option>
-                    <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
-                    <option value="Pegawai/Karyawan">Pegawai/Karyawan</option>
-                    <option value="Pengusaha">Pengusaha</option>
-                    <option value="Pengrajin">Pengrajin</option>
-                    <option value="Pedagang">Pedagang</option>
-                    <option value="Arsitek">Arsitek</option>
-                    <option value="Apoteker">Apoteker</option>
-                    <option value="Paramedis">Paramedis</option>
-                    <option value="Advokat">Advokat</option>
-                    <option value="Akuntan">Akuntan</option>
-                    <option value="Insinyur">Insinyur</option>
-                    <option value="Dokter">Dokter</option>
-                    <option value="Nelayan">Nelayan</option>
-                    <option value="Petani">Petani</option>
-                    <option value="Dosen">Dosen</option>
                     <option value="Guru">Guru</option>
-                    <option value="Lain-lain">Lain-lain</option>
+                    <option value="Dosen">Dosen</option>
+                    <option value="Pensiunan">Pensiunan</option>
+                    <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                    <option value="Nelayan">Nelayan</option>
+                    <option value="Dokter">Dokter</option>
+                    <option value="Insinyur">Insinyur</option>
+                    <option value="Akuntan">Akuntan</option>
+                    <option value="Advokat">Advokat</option>
+                    <option value="Paramedis">Paramedis</option>
+                    <option value="Apoteker">Apoteker</option>
+                    <option value="Arsitek">Arsitek</option>
+                    <option value="Pedagang">Pedagang</option>
+                    <option value="Pengrajin">Pengrajin</option>
+                    <option value="Pengusaha">Pengusaha</option>
+                    <option value="Pegawai/karyawan">Pegawai/karyawan</option>
+                    <option value="Lainnya">Lainnya</option>
                   </select>
                 </div><!-- col -->
                 <div class="col-md-6 mb-3">
@@ -215,13 +208,12 @@
 
               <div class="row row-sm">
                 <div class="col-md-6 mb-3">
-                  <label class="form-control-label">Pekerjaan: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label">Status Pekerjaan: <span class="tx-danger">*</span></label>
                   <select class="form-control select2-no-search" name="pekerjaan" id="pekerjaan" required="">
                     <option value="" disabled="" selected="">Select</option>
-                    <option value="Negeri/TNI/POLRI">Negeri/TNI/POLRI</option>
-                    <option value="Instansi Swasta">Instansi Swasta</option>
-                    <option value="Wiraswasta">Wiraswasta</option>
                     <option value="Belum Bekerja">Belum Bekerja</option>
+                    <option value="Bekerja">Bekerja</option>
+                    <option value="Pensiunan">Pensiunan</option>
                   </select>
                 </div><!-- col -->
                 <div class="col-md-6 mb-3">

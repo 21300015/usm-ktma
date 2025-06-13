@@ -10,6 +10,7 @@ class KtamModel extends Model
     protected $primaryKey = 'nik';
     protected $allowedFields = [
         'nik', 
+        'id_cabang', 
         'nama_lengkap', 
         'gelar_depan', 
         'gelar_belakang', 
@@ -23,8 +24,6 @@ class KtamModel extends Model
         'kecamatan',
         'kelurahan',
         'kode_pos',
-        'daerah',
-        'cabang',
         'email',
         'nomor_hp',
         'profesi',
@@ -45,6 +44,8 @@ class KtamModel extends Model
         'bahasa_inggris',
         'bahasa_lainnya',
         'organisasi_lain',
+        'status_approve',
+        'approve_by',
         'created_at',
         'updated_at',
         'doc_updated_at'

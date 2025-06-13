@@ -9,6 +9,7 @@ class Dashboard extends BaseController
         if (!session()->get('logged_in')) {
             return redirect()->to('/login')->with('error', 'Anda belum login.');
         }
+        
         return view('dashboard');
     }
 }

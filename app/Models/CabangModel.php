@@ -7,7 +7,7 @@ class CabangModel extends Model
 {
     protected $table = 'cabang_muhammadiyah';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nama_cabang', 'daerah', 'provinsi', 'kota', 'kecamatan', 'kelurahan', 'alamat', 'kontak', 'email'];
+    protected $allowedFields = ['nama_cabang', 'daerah', 'provinsi', 'kecamatan', 'kelurahan', 'alamat', 'kontak', 'email', 'updated_at', 'created_at'];
 
     // Ambil daftar daerah unik dari database
     public function getDaerah()
