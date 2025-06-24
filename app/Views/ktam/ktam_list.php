@@ -1777,6 +1777,7 @@
                 success: function(response) {
                     alert('Data berhasil dihapus!');
                     $('#ktam_list').DataTable().ajax.reload(); // Reload DataTable setelah penghapusan
+                    listView();
                 },
                 error: function(xhr) {
                     console.error('Error deleting data:', xhr.responseText);
