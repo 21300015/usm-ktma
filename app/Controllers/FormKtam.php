@@ -35,6 +35,8 @@ class FormKtam extends BaseController
 
     public function store()
     {
+        $daerah = $this->request->getPost('daerah');
+        $cabang = $this->request->getPost('cabang');
         $CabangModel = new CabangModel();
         $id_cabang = $CabangModel->select('id')
             ->where('daerah', $daerah)

@@ -74,6 +74,8 @@ class Ktam extends BaseController
 
     public function store()
     {
+        $daerah = $this->request->getPost('daerah');
+        $cabang = $this->request->getPost('cabang');
         $CabangModel = new CabangModel();
         $id_cabang = $CabangModel->select('id')
             ->where('daerah', $daerah)
@@ -176,7 +178,7 @@ class Ktam extends BaseController
             
             if (!empty($dataOrganisasiAnggota)) {
                 if($OrganisasiAnggotaModel->insertBatch($dataOrganisasiAnggota)){
-                    return redirect()->to('')->with('success', 'Pendaftaran berhasil!');
+                    return redirect()->to('ktam_list')->with('success', 'Pendaftaran berhasil!');
                 }
             }else{
                 return redirect()->to('ktam_list')->with('success', 'Pendaftaran berhasil!');
